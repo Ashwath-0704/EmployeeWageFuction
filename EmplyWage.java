@@ -98,6 +98,7 @@ public class EmplyWage {
 		 */
 		System.out.println("The part time dasy is " + Part_Time_days1 + "wage wage amount is : ₹ " + Part_Time_wage);
 	}
+
 	/*
 	 * UC4 EMPLOYEE WAGE
 	 */
@@ -116,8 +117,8 @@ public class EmplyWage {
 		int total_Working_Hrs = 0;
 		for (int i = 1; i <= days; i++) {
 
-			if (total_Working_Hrs <= 100 || i <= 20) {
-				
+			if (total_Working_Hrs <= 100 && i <= 20) {
+
 				total_Working_Hrs = (Fixed_hrs * Prasent1) + (Part_Time_Fixed_hrs * Partime1);
 				total_Working_Hrs += total_Working_Hrs;
 
@@ -147,7 +148,7 @@ public class EmplyWage {
 		/*
 		 * Displaying the Total days
 		 */
-		System.out.println("\nStopping the program at 100hrs : "+total_Working_Hrs);
+		System.out.println("\nStopping the program at 100hrs : " + total_Working_Hrs);
 		System.out.println("\nThe present days is " + Prasent1 + " and wage amount is : ₹ " + Present_wage1);
 		System.out.println("The absent days is " + absent1 + "  wage amount is : ₹ " + Absent_wage1);
 		System.out.println("The part time days is " + Partime1 + " wage wage amount is : ₹ " + Part_Time_wage1);
@@ -163,6 +164,18 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC6 EMPLOYEE WAGE
+	 * 
+	 * Condition are 100 hours and 20 Days
+	 */
+	public static void EmplyWage100HrsAnd20Days() {
+
+		EmplyWage20Days();
+//		int total_Working_Days=(Fixed_hrs*Prasent1)+(Part_Time_Fixed_hrs*Partime1);
+//		System.out.println(total_Working_Days);
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
@@ -175,7 +188,8 @@ public class EmplyWage {
 //		e.Emplycalwage(); // UC2
 //		e.EmplyPartTimeWage(); // UC3
 //		e.EmplyWageSwitchCase();	 // UC4
-		e.EmplyWage20Days(); 		 // UC5
+//		e.EmplyWage20Days(); 		 // UC5
+		e.EmplyWage100HrsAnd20Days();// UC6
 
 	}
 }
