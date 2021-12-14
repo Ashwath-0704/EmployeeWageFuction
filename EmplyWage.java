@@ -1,0 +1,61 @@
+package Emplywage;
+
+import java.util.*;
+
+public class EmplyWage {
+
+	static int present, absent, Part_Time_days1;// (UC1 to UC3)
+	static int Prasent1, absent1, Partime1; // (UC4 to UC7)
+
+	final static int Fixed_hrs = 8; // can not be changed
+	final static int Part_Time_Fixed_hrs = 4; // can not be changed
+
+	static int days, Rate;// (UC1 to UC3)
+	static String name;// (UC1 to UC3)
+
+	/*
+	 * UC1 EMPLOYEE WAGE
+	 */
+	public static void EmplywagePA() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the employee name :");
+		name = sc.next();
+		System.out.print("Enter the days :");
+		days = sc.nextInt();
+
+		System.out.println("Entre the employee name : " + name);
+
+		// Iterating given number of days
+		for (int i = 1; i <= days; i++) {
+			// creating random number
+			double emp = Math.floor(Math.random() * 10 % 2);
+			// checking if employee is present or absent using if statement
+			if (emp == 0)
+				absent++;
+			else if (emp == 1)
+				present++;
+			else
+				break;
+		} // End For loop
+		/*
+		 * Displaying the Total days
+		 */
+		System.out.println("\nEmployee is present for " + present);
+		System.out.println("Employee is abscent for " + absent);
+	}
+
+	/*
+	 * Main Function
+	 */
+	public static void main(String[] args) {
+		/*
+		 * UC7 EMPLOYEE WAGE
+		 * write a Class Method to Compute 
+		 * Employee Wage - Use Class Method and Class
+		 */
+		EmplyWage e =new EmplyWage();
+		e.EmplywagePA(); 			 // UC1
+
+	}
+}
