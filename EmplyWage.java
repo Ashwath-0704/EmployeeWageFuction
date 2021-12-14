@@ -98,6 +98,60 @@ public class EmplyWage {
 		 */
 		System.out.println("The part time dasy is " + Part_Time_days1 + "wage wage amount is : ₹ " + Part_Time_wage);
 	}
+	/*
+	 * UC4 EMPLOYEE WAGE
+	 */
+	public static void EmplyWageSwitchCase() {
+		String name1;
+		int rate1, days;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the employee name :");
+		name1 = sc.next();
+		System.out.print("Enter the days :");
+		days = sc.nextInt();
+		System.out.print("Enter the rate :");
+		rate1 = sc.nextInt();
+		System.out.println("Entre the employee name : " + name1);
+		int total_Working_Hrs = 0;
+		for (int i = 1; i <= days; i++) {
+
+			if (total_Working_Hrs <= 100 && i <= 20) {
+				
+				total_Working_Hrs = (Fixed_hrs * Prasent1) + (Part_Time_Fixed_hrs * Partime1);
+				total_Working_Hrs += total_Working_Hrs;
+
+				int emp = (int) Math.floor(Math.random() * 10 % 3);
+				switch (emp) {
+				case 0:
+					absent1++;
+					break;
+				case 1:
+					Prasent1++;
+					break;
+				case 2:
+					Partime1++;
+					break;
+				}
+			} // end of while
+
+		} // end of for loop
+
+		/*
+		 * calculating the Wages for:- [equation=(rate*Hours*days)] Present days Absent
+		 * days
+		 */
+		int Present_wage1 = rate1 * Fixed_hrs * Prasent1;// Present days
+		int Part_Time_wage1 = rate1 * Part_Time_Fixed_hrs * Partime1; // Part_Time days
+		int Absent_wage1 = rate1 * Fixed_hrs * absent1; // Absent days
+		/*
+		 * Displaying the Total days
+		 */
+		System.out.println("\nStopping the program at 100hrs : "+total_Working_Hrs);
+		System.out.println("\nThe present days is " + Prasent1 + " and wage amount is : ₹ " + Present_wage1);
+		System.out.println("The absent days is " + absent1 + "  wage amount is : ₹ " + Absent_wage1);
+		System.out.println("The part time days is " + Partime1 + " wage wage amount is : ₹ " + Part_Time_wage1);
+	}
 
 	/*
 	 * Main Function
@@ -110,7 +164,8 @@ public class EmplyWage {
 		EmplyWage e = new EmplyWage();
 //		e.EmplywagePA(); 			 // UC1
 //		e.Emplycalwage(); // UC2
-		e.EmplyPartTimeWage(); // UC3
+//		e.EmplyPartTimeWage(); // UC3
+		e.EmplyWageSwitchCase();	 // UC4
 
 	}
 }
