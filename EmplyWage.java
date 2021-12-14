@@ -70,6 +70,36 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC3 EMPLOYEE WAGE
+	 */
+	public static void EmplyPartTimeWage() {
+		// calling EmplywagePA function
+		Emplycalwage();
+		// Iterating given number of days
+		for (int i = 1; i <= days; i++) {
+			// creating random number
+			double emp = Math.floor(Math.random() * 10 % 3);
+			// checking if employee is present or absent using if statement
+			if (emp == 0)
+				continue;
+			else if (emp == 1)
+				continue;
+			else if (emp == 2)
+				Part_Time_days1++;
+			else
+				break;
+		}
+		/*
+		 * calculating the Wages for:- [equation=(rate*Hours*days)] Part_Time
+		 */
+		int Part_Time_wage = Rate * Part_Time_Fixed_hrs * Part_Time_days1; // Part_Time days
+		/*
+		 * Displaying the Total amount
+		 */
+		System.out.println("The part time dasy is " + Part_Time_days1 + "wage wage amount is : ₹ " + Part_Time_wage);
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
@@ -79,7 +109,8 @@ public class EmplyWage {
 		 */
 		EmplyWage e = new EmplyWage();
 //		e.EmplywagePA(); 			 // UC1
-		e.Emplycalwage(); // UC2
+//		e.Emplycalwage(); // UC2
+		e.EmplyPartTimeWage(); // UC3
 
 	}
 }
