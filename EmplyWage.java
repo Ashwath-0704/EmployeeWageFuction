@@ -180,8 +180,9 @@ public class EmplyWage {
 	 */
 	public static void main(String[] args) {
 		/*
-		 * UC7 EMPLOYEE WAGE write a Class Method to Compute Employee Wage - Use Class
-		 * Method and Class
+		 * UC7 EMPLOYEE WAGE 
+		 * Write a Class Method to Compute Employee Wage -
+		 * Use Class Method and Class
 		 */
 		EmplyWage e = new EmplyWage();
 //		e.EmplywagePA(); 			 // UC1
@@ -189,7 +190,7 @@ public class EmplyWage {
 //		e.EmplyPartTimeWage(); // UC3
 //		e.EmplyWageSwitchCase();	 // UC4
 //		e.EmplyWage20Days(); 		 // UC5
-		e.EmplyWage100HrsAnd20Days();// UC6
+//		e.EmplyWage100HrsAnd20Days();// UC6
 
 	}
 }
