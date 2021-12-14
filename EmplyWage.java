@@ -46,16 +46,40 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC2 EMPLOYEE WAGE
+	 */
+	public static void Emplycalwage() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the employee Rate :");
+		Rate = sc.nextInt();
+
+		// calling EmplywagePA function
+		EmplywagePA();
+		/*
+		 * calculating the Wages for:- [equation=(rate*Hours*days)] Present days Absent
+		 * days
+		 */
+		int Present_wage = Rate * Fixed_hrs * present;// Present days
+		int Absent_wage = Rate * Fixed_hrs * absent; // Absent days
+		/*
+		 * Displaying the Total amount
+		 */
+		System.out.println("\nThe present wage amount is : ₹ " + Present_wage);
+		System.out.println("The absent wage amount is : ₹ " + Absent_wage);
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
 		/*
-		 * UC7 EMPLOYEE WAGE
-		 * write a Class Method to Compute 
-		 * Employee Wage - Use Class Method and Class
+		 * UC7 EMPLOYEE WAGE write a Class Method to Compute Employee Wage - Use Class
+		 * Method and Class
 		 */
-		EmplyWage e =new EmplyWage();
-		e.EmplywagePA(); 			 // UC1
+		EmplyWage e = new EmplyWage();
+//		e.EmplywagePA(); 			 // UC1
+		e.Emplycalwage(); // UC2
 
 	}
 }
