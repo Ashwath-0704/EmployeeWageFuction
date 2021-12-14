@@ -116,7 +116,7 @@ public class EmplyWage {
 		int total_Working_Hrs = 0;
 		for (int i = 1; i <= days; i++) {
 
-			if (total_Working_Hrs <= 100 && i <= 20) {
+			if (total_Working_Hrs <= 100 || i <= 20) {
 				
 				total_Working_Hrs = (Fixed_hrs * Prasent1) + (Part_Time_Fixed_hrs * Partime1);
 				total_Working_Hrs += total_Working_Hrs;
@@ -154,6 +154,15 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC5 EMPLOYEE WAGE
+	 * 
+	 * Giving input as 20 Days
+	 */
+	public static void EmplyWage20Days() {
+		EmplyWageSwitchCase();
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
@@ -165,7 +174,8 @@ public class EmplyWage {
 //		e.EmplywagePA(); 			 // UC1
 //		e.Emplycalwage(); // UC2
 //		e.EmplyPartTimeWage(); // UC3
-		e.EmplyWageSwitchCase();	 // UC4
+//		e.EmplyWageSwitchCase();	 // UC4
+		e.EmplyWage20Days(); 		 // UC5
 
 	}
 }
