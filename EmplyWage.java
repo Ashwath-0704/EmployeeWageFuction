@@ -169,10 +169,63 @@ public class EmplyWage {
 	 * Condition are 100 hours and 20 Days
 	 */
 	public static void EmplyWage100HrsAnd20Days() {
-
 		EmplyWage20Days();
-//		int total_Working_Days=(Fixed_hrs*Prasent1)+(Part_Time_Fixed_hrs*Partime1);
-//		System.out.println(total_Working_Days);
+	}
+
+	/*
+	 * UC8 EMPLOYEE WAGE
+	 */
+	public static void EmplyWageCompany() {
+		String name1;
+		int rate1, days, count;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("How many companies you want Compute Employee Wage :");
+		count = sc.nextInt();
+
+		for (int j = 1; j <= count; j++) {
+			System.out.print("\n**********************************************************");
+			System.out.print("\n\nEnter the company name :");
+			name1 = sc.next();
+			System.out.print("Enter number of working days :");
+			days = sc.nextInt();
+			System.out.print("Enter employee wage rate :");
+			rate1 = sc.nextInt();
+			System.out.println("\nThe company name is : " + name1);
+
+			for (int i = 1; i <= days; i++) {
+				int emp = (int) Math.floor(Math.random() * 10 % 3);
+				switch (emp) {
+				case 0:
+					absent1++;
+					break;
+				case 1:
+					Prasent1++;
+					break;
+				case 2:
+					Partime1++;
+					break;
+
+				} // end of while
+
+			} // end of for loop
+
+			/*
+			 * calculating the Wages for:- [equation=(rate*Hours*days)] Present days Absent
+			 * days
+			 */
+			int Present_wage1 = rate1 * Fixed_hrs * Prasent1;// Present days
+			int Part_Time_wage1 = rate1 * Part_Time_Fixed_hrs * Partime1; // Part_Time days
+			int Absent_wage1 = rate1 * Fixed_hrs * absent1; // Absent days
+			/*
+			 * Displaying the Total days
+			 */
+//		System.out.println("\nStopping the program at 100hrs : " + total_Working_Hrs);
+			System.out.println("\nThe present days is " + Prasent1 + " and wage amount is : ₹ " + Present_wage1);
+			System.out.println("The absent days is " + absent1 + "  wage amount is : ₹ -"+Absent_wage1);
+			System.out.println("The part time days is " + Partime1 + " wage wage amount is : ₹ " + Part_Time_wage1);
+
+		} // END OF 1st FOR LOOP
 	}
 
 	/*
@@ -180,9 +233,8 @@ public class EmplyWage {
 	 */
 	public static void main(String[] args) {
 		/*
-		 * UC7 EMPLOYEE WAGE 
-		 * Write a Class Method to Compute Employee Wage -
-		 * Use Class Method and Class
+		 * UC7 EMPLOYEE WAGE Write a Class Method to Compute Employee Wage - Use Class
+		 * Method and Class
 		 */
 		EmplyWage e = new EmplyWage();
 //		e.EmplywagePA(); 			 // UC1
@@ -191,6 +243,7 @@ public class EmplyWage {
 //		e.EmplyWageSwitchCase();	 // UC4
 //		e.EmplyWage20Days(); 		 // UC5
 //		e.EmplyWage100HrsAnd20Days();// UC6
+		e.EmplyWageCompany(); // UC8
 
 	}
 }
