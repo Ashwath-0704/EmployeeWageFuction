@@ -314,7 +314,37 @@ public class EmplyWage {
 		} // END OF 1st FOR LOOP
 	}
 
-	
+	/*
+	 * UC12 EMPLOYEE WAGE
+	 */
+	public static void EmplyCompanyArrList() {
+		Scanner sc = new Scanner(System.in);
+		EmplyWage e = new EmplyWage();
+
+		System.out.print("How many companies you want Compute Employee Wage :");
+		count = sc.nextInt();
+
+		// creating an Object for main class and inner class
+
+		for (int j = 1; j <= count; j++) {
+			maincodeEmplyWage();
+			Person Data = e.new Person(name1, rate1, Prasent1, Partime1, absent1, Present_wage1, Part_Time_wage1,
+					Absent_wage1);
+			System.out.print("\n");
+			arr.add(Data);
+			arr.toString();
+
+			Prasent1 = 0;
+			absent1 = 0;
+			Partime1 = 0;
+		}
+		// Uncomment to diplay the arrays data
+//		for (Person p : arr) {
+//			p.Display();
+//		}
+
+	}
+
 	/*
 	 * Main Function
 	 */
@@ -332,7 +362,8 @@ public class EmplyWage {
 //		e.EmplyWage100HrsAnd20Days();// UC6
 //		e.EmplyWageCompany(); // UC8
 //		e.EmplyCompanywage(); //UC9
-		e.EmplyCompanyArr(); // UC10
+//		e.EmplyCompanyArr(); // UC10
+		e.EmplyCompanyArrList(); // UC12
 
 
 	}
