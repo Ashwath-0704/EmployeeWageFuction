@@ -3,11 +3,13 @@ package Emplywage;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//import AddressBook.Person;
+interface NewInterface {
 
-//import AddressBook.Person;
+	public void EmplyCompanyInterface();
+}
 
-public class EmplyWage {
+public class EmplyWage implements NewInterface {
+
 	static ArrayList<Person> arr = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
 	static int rate1, days1, count, Present_wage1, Part_Time_wage1, Absent_wage1;
@@ -315,6 +317,15 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC11 EMPLOYEE WAGE
+	 */
+	// Implementing interface method
+	@Override
+	public void EmplyCompanyInterface() {
+		EmplyCompanyArr(); // calling other function
+	}
+
+	/*
 	 * UC12 EMPLOYEE WAGE
 	 */
 	public static void EmplyCompanyArrList() {
@@ -373,18 +384,24 @@ public class EmplyWage {
 		 * Method and Class
 		 */
 		EmplyWage e = new EmplyWage();
-//		e.EmplywagePA(); 			 // UC1
+
+//		e.EmplywagePA(); // UC1
 //		e.Emplycalwage(); // UC2
 //		e.EmplyPartTimeWage(); // UC3
-//		e.EmplyWageSwitchCase();	 // UC4
-//		e.EmplyWage20Days(); 		 // UC5
+//		e.EmplyWageSwitchCase(); // UC4
+//		e.EmplyWage20Days(); // UC5
 //		e.EmplyWage100HrsAnd20Days();// UC6
 //		e.EmplyWageCompany(); // UC8
 //		e.EmplyCompanywage(); //UC9
 //		e.EmplyCompanyArr(); // UC10
 //		e.EmplyCompanyArrList(); // UC12
 //		e.EmplyCompanyStorage(); // UC13
-		e.EmplyGetCompany(); // UC14
+//		e.EmplyGetCompany(); // UC14
+
+		NewInterface obj = new EmplyWage();
+		// Calling the static method of interface
+		obj.EmplyCompanyInterface(); // UC11
 
 	}
+
 }
