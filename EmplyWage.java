@@ -353,6 +353,18 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC14 EMPLOYEE WAGE
+	 */
+	public static void EmplyGetCompany() {
+		EmplyCompanyStorage();
+		System.out.print("Enter the company ID from (0 to " + (count - 1) + ") : ");
+		int find = sc.nextInt();
+		Person pos = arr.get(find);
+		pos.Display();
+
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
@@ -371,7 +383,8 @@ public class EmplyWage {
 //		e.EmplyCompanywage(); //UC9
 //		e.EmplyCompanyArr(); // UC10
 //		e.EmplyCompanyArrList(); // UC12
-		e.EmplyCompanyStorage(); // UC13
+//		e.EmplyCompanyStorage(); // UC13
+		e.EmplyGetCompany(); // UC14
 
 	}
 }
