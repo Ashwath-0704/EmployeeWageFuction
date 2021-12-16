@@ -8,7 +8,7 @@ import java.util.Scanner;
 //import AddressBook.Person;
 
 public class EmplyWage {
-//	static ArrayList<Person> arr = new ArrayList<>();
+	static ArrayList<Person> arr = new ArrayList<>();
 	static Scanner sc = new Scanner(System.in);
 	static int rate1, days1, count, Present_wage1, Part_Time_wage1, Absent_wage1;
 	static int present, absent, Part_Time_days1;// (UC1 to UC3)
@@ -253,6 +253,67 @@ public class EmplyWage {
 	/*
 	 * inner class start
 	 */
+	class Person {
+
+		String name1;
+		int Absent_wage1;
+		int Part_Time_wage1;
+		int Present_wage1;
+		int Prasent1, Partime1, absent1;
+		int rate1;
+
+		public Person(String name1, int rate1, int Prasent1, int Partime1, int absent1, int present_wage1,
+				int part_Time_wage1, int absent_wage1) {
+			this.name1 = name1;
+			this.rate1 = rate1;
+			this.Prasent1 = Prasent1;
+			this.Partime1 = Partime1;
+			this.absent1 = absent1;
+			this.Present_wage1 = present_wage1;
+			this.Part_Time_wage1 = part_Time_wage1;
+			this.Absent_wage1 = absent_wage1;
+		}
+
+		public void Display() {
+			System.out.println("\nCompany Name : " + name1 + "\nPrasent days : " + Prasent1 + "\nPartTime days : "
+					+ Partime1 + "\nAbsent days : " + absent1 + "\nPresent_wage1 : " + Present_wage1
+					+ "\nPart_Time_wage1 : " + Part_Time_wage1 + "\nAbsent_wage1 : " + Absent_wage1);
+			System.out.println(
+					"\n*****************************************************************************************");
+		}
+	} // inner class END
+
+	/*
+	 * UC10 EMPLOYEE WAGE
+	 */
+	public static void EmplyCompanyArr() {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("How many companies you want Compute Employee Wage :");
+		count = sc.nextInt();
+
+		// creating an Object for main class and inner class
+		EmplyWage e = new EmplyWage();
+		Person[] arr = new Person[count]; // empty array
+
+		for (int j = 1; j <= count; j++) {
+
+			maincodeEmplyWage();
+			/*
+			 * Displaying data stored in the arrays
+			 */
+			arr[j - 1] = e.new Person(name1, rate1, Prasent1, Partime1, absent1, Present_wage1, Part_Time_wage1,
+					Absent_wage1);
+			System.out.print("\n");
+			System.out.println("The company has added at " + (j - 1) + " index in array");
+			arr[j - 1].Display();
+
+			Prasent1 = 0;
+			absent1 = 0;
+			Partime1 = 0;
+		} // END OF 1st FOR LOOP
+	}
+
 	
 	/*
 	 * Main Function
@@ -270,7 +331,8 @@ public class EmplyWage {
 //		e.EmplyWage20Days(); 		 // UC5
 //		e.EmplyWage100HrsAnd20Days();// UC6
 //		e.EmplyWageCompany(); // UC8
-		e.EmplyCompanywage(); //UC9
+//		e.EmplyCompanywage(); //UC9
+		e.EmplyCompanyArr(); // UC10
 
 
 	}
