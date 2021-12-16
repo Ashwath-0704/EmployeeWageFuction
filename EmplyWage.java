@@ -346,6 +346,13 @@ public class EmplyWage {
 	}
 
 	/*
+	 * UC13 EMPLOYEE WAGE
+	 */
+	public static void EmplyCompanyStorage() {
+		EmplyCompanyArrList();
+	}
+
+	/*
 	 * Main Function
 	 */
 	public static void main(String[] args) {
@@ -363,8 +370,8 @@ public class EmplyWage {
 //		e.EmplyWageCompany(); // UC8
 //		e.EmplyCompanywage(); //UC9
 //		e.EmplyCompanyArr(); // UC10
-		e.EmplyCompanyArrList(); // UC12
-
+//		e.EmplyCompanyArrList(); // UC12
+		e.EmplyCompanyStorage(); // UC13
 
 	}
 }
